@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../src/styles.css">
+    <title>RBAC User Interface</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Role-Based Access Control (RBAC)</h1>
+        <div id="login-section">
+            <h2 id="Login">Login</h2>
+            <form id="login-form">
+                <label for="username">Username</label>
+                <input type="text" id="username" required>
+                <label for="role">Role</label>
+                <select id="role" required>
+                    <option value="">Select Role</option>
+                    <option value="admin">Admin</option>
+                    <option value="editor">Editor</option>
+                    <option value="viewer">Viewer</option>
+                </select>
+                <button type="submit">Login</button>
+            </form>
+        </div>
+        <div id="content-section" style="display: none;">
+            <h2>Content Area</h2>
+            <div id="admin-content" class="role-content" style="display: none;">
+                <h3>Admin Dashboard</h3>
+                <button id="manage-users-btn">Manage Users</button>
+                <button id="manage-roles-btn">Manage Roles</button>
+                <div id="user-management" style="display: none;">
+                    <h4>User Management</h4>
+                    <table id="user-table">
+                        <thead>
+                            <tr>
+                                <th>Username</th>
+                                <th>Role</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                    <button id="add-user-btn">Add User</button>
+                </div>
+                <div id="role-management" style="display: none;">
+                    <h4>Role Management</h4>
+                    <div id="role-list"></div>
+                    <button id="add-role-btn">Add Role</button>
+                </div>
+                <button id="logout-btn">Logout</button>
+            </div>
+            <div id="editor-content" class="role-content" style="display: none;">
+                <h3>Editor Dashboard</h3>
+                <p>Only accessible by Editors.</p>
+            </div>
+            <div id="viewer-content" class="role-content" style="display: none;">
+                <h3>Viewer Dashboard</h3>
+                <p>Only accessible by Viewers.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="../src/script.js"></script>
+</body>
+</html>
